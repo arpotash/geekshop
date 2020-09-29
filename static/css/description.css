@@ -1,0 +1,242 @@
+.catalog_description {
+    background: #f2f2f2;
+}
+
+.catalogTitle_description {
+    max-width: 293px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    padding-top: 32px;
+    margin-top: 0;
+}
+
+.descriptionProduct {
+    background: #f2f2f2;
+
+}
+
+.descriptionProductInner {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 430px);
+    grid-column-gap: 100px;
+    padding-left: 61px;
+}
+
+.descriptionProductLeftContent {
+    justify-self: center;
+}
+
+.descriptionProductLeftContentImgBlock__img {
+    width: 100%;
+}
+
+.descriptionProductLeftContent__text {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    margin-top: 32px;
+    color: #000000;
+}
+
+.descriptionProductRightContentHeadBlock {
+    display: grid;
+    grid-template-columns: 116px 290px;
+    grid-gap: 20px;
+}
+
+.descriptionProductRightContentHeadBlock__shortName {
+    font-family: 'arBonnie', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 105.695px;
+    line-height: 126px;
+    margin: 0;
+    color: #685959;
+}
+
+.descriptionProductRightContentHeadBlock__fullName {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18.2267px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.descriptionProductRightContentHeadBlock__sizeTitle,
+.descriptionProductRightContentHeadBlockChooseSize__item {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+    color: #000000;
+}
+
+.descriptionProductRightContentHeadBlock__sizeTitle {
+    grid-column-start: 2;
+}
+
+.descriptionProductRightContentHeadBlockChooseSize {
+    grid-column-end: 3;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.descriptionProductRightContentHeadBlockChooseSize__item {
+    padding: 5px 7.29px;
+    border: 1px solid #716360;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.descriptionProductRightContentHeadBlockChooseSize__item:not(:first-child) {
+    margin-left: 8.33px;
+}
+
+.descriptionProductRightContentHeadBlockChooseSize__item:hover {
+    color: grey;
+    background: #d4d4d4;
+}
+
+.descriptionProductRightContentPriceInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 44px;
+}
+
+.descriptionProductRightContentPriceInfo__price {
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 37.9722px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #3E3E3E;
+    margin: 0;
+}
+
+.descriptionProductRightContentPriceInfo__btn {
+    width: 121.43px;
+    height: 37.45px;
+    background: #000;
+    border-radius: 10px;
+    font-family: 'arBonnie', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.2518px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.descriptionProductRightContentPriceInfo__btn:focus {
+    outline: none;
+}
+
+.descriptionProductRightContentLine {
+    margin-top: 14px;
+    height: 1.5px;
+    background: #000;
+    width: 100%;
+    margin-bottom: 53.37px;
+}
+
+.logoBlock {
+    min-height: 60px;
+    position: relative;
+    display: block;
+    background-color: #f2f2f2;
+}
+
+.logoBlock:after {
+    content: "";
+    background: url(../img/logo.png);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.brandsTopContent {
+    padding-top: 37px;
+    margin: auto;
+    text-align: center;
+}
+
+.brandsTopContent__title {
+    margin-top: 0;
+    margin-bottom: 13px;
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.brandsTopContent__name {
+    font-family: 'arBonnie', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64.3243px;
+    line-height: 77px;
+    color: #716360;
+    margin: 0;
+}
+
+.brandsTopContent__text {
+    max-width: 33%;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.brandsBottomContent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 104px;
+}
+
+.brandsBottomContent__img {
+    justify-self: center;
+}
+
+.brandsBottomContent__text {
+    align-self: center;
+    max-width: 77%;
+    text-align: center;
+    justify-self: center;
+}

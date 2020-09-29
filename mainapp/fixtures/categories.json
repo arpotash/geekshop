@@ -1,0 +1,26 @@
+[
+    {
+        "model": "mainapp.CategoryProduct",
+        "pk": 7,
+        "fields": {
+            "name": "Gold",
+            "description": "You know"
+        }
+    },
+    {
+        "model": "mainapp.CategoryProduct",
+        "pk": 8,
+        "fields": {
+            "name": "Silver",
+            "description": "You know, i mean"
+        }
+    },
+    {
+        "model": "mainapp.CategoryProduct",
+        "pk": 9,
+        "fields": {
+            "name": "Bronze",
+            "description": "You know also"
+        }
+    }
+]

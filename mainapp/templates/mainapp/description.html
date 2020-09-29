@@ -1,0 +1,70 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Описание товара</title>
+{% endblock %}
+
+{% block menu %}
+    <section class="catalog_description">
+        <div class="container containerUp">
+            <h2 class="catalogTitle_description">серебряное кольцо с покрытием «бронза»</h2>
+        </div>
+        {% include 'mainapp/includes/inc_main_menu.html' %}
+{% endblock %}
+        {% block content %}
+            <div class="descriptionProduct">
+                <div class="container">
+                    <div class="descriptionProductInner">
+                        <div class="descriptionProductLeftContent">
+                            <div class="descriptionProductLeftContentImgBlock">
+                                <img src="{% static 'img/product4.png' %}" class="descriptionProductLeftContentImgBlock__img">
+                                <div class=""></div>
+                            </div>
+                            <p class="descriptionProductLeftContent__text">
+                                Dui pellentesque at at volutpat. Ac facilisis pretium cras egestas gravida rhoncus sem sem augue. Fames mauris massa hac sollicitudin curabitur in semper aenean lacus.
+                            </p>
+                        </div>
+                        <div class="descriptionProductRightContent">
+                            <div class="descriptionProductRightContentHeadBlock">
+                                <h3 class="descriptionProductRightContentHeadBlock__shortName">SLIP</h3>
+                                <p class="descriptionProductRightContentHeadBlock__fullName">Серебряное кольцо с покрытием «бронза»</p>
+                                <label class="descriptionProductRightContentHeadBlock__sizeTitle">размер</label>
+                                <div class="descriptionProductRightContentHeadBlockChooseSize">
+                                    <div class="descriptionProductRightContentHeadBlockChooseSize__item">15</div>
+                                    <div class="descriptionProductRightContentHeadBlockChooseSize__item">16</div>
+                                    <div class="descriptionProductRightContentHeadBlockChooseSize__item">17</div>
+                                    <div class="descriptionProductRightContentHeadBlockChooseSize__item">18</div>
+                                </div>
+                            </div>
+                            <div class="descriptionProductRightContentPriceInfo">
+                                <p class="descriptionProductRightContentPriceInfo__price">10 000 rub</p>
+                                <button class="descriptionProductRightContentPriceInfo__btn">Купить</button>
+                            </div>
+                            <div class="descriptionProductRightContentLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="logoBlock">
+            <div class="container">
+            </div>
+        </section>
+        <section class="brands">
+            <div class="container">
+                <div class="brandsTopContent">
+                    <h3 class="brandsTopContent__title">О бренде</h3>
+                    <h4 class="brandsTopContent__name">SLIP</h4>
+                    <p class="brandsTopContent__text">Dui pellentesque at at volutpat. Ac facilisis pretium cras egestas gravida rhoncus sem sem augue. Fames mauris massa hac sollicitudin curabitur in semper aenean lacus.</p>
+                </div>
+                <div class="brandsBottomContent">
+                    <img src="{% static 'img/brands1.png' %}" class="brandsBottomContent__img">
+                    <p class="brandsBottomContent__text">Quis ornare tincidunt platea vehicula mauris. Euismod blandit fermentum amet sit pellentesque.</p>
+                    <p class="brandsBottomContent__text">Natoque augue sed ut nam pretium aliquet sed justo.
+                    Integer faucibus sed odio eu pellentesque dignissim.</p>
+                    <img src="{% static 'img/brands2.png' %}" class="brandsBottomContent__img">
+                </div>
+            </div>
+        </section>
+        {% endblock %}

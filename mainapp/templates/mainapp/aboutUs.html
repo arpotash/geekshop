@@ -1,0 +1,44 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>О нас</title>
+{% endblock %}
+
+{% block content %}
+    <section class="about">
+        <div class="container">
+            <div class="aboutTitle">О нас</div>
+            <div class="aboutWrap">
+                <img src="{% static 'img/about.png' %}">
+                <div class="aboutRightContent">
+                    <h5 class="aboutRightContent__title">Наша идея</h5>
+                    <p class="aboutRightContent__text">Dui pellentesque at at volutpat. Ac facilisis pretium cras egestas gravida rhoncus sem sem augue. Fames mauris massa hac sollicitudin curabitur in semper aenean lacus.</p>
+                    <p class="aboutRightContent__text space">Natoque augue sed ut nam pretium aliquet sed justo.
+                        Integer faucibus sed odio eu pellentesque dignissim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="logoBlock">
+        <div class="container">
+        </div>
+    </section>
+    <section class="pluses">
+        <div class="container">
+            <img src="{% static 'img/pluses.png' %}" class="plusesLeftImg">
+            <div class="plusesInner">
+                <div class="plusesRightContent">
+                    <h4 class="plusesRightContentTitle">Наши преимущества</h4>
+                    <ul class="plusesRightContentMenu">
+                        <li class="plusesRightContentMenuItem plusesRightContentMenuItem_delivery">
+                            Бесплатная международная доставка</li>
+                        <li class="plusesRightContentMenuItem plusesRightContentMenuItem_guarantee">Гарантия на изделия 5 лет</li>
+                        <li class="plusesRightContentMenuItem plusesRightContentMenuItem_quality">Качество каждого изделия вас удивит </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+</body>
