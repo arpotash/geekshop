@@ -1,0 +1,47 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Главная</title>
+{% endblock %}
+{% block menu %}
+    <section class="catalog">
+        <div class="container containerUp">
+            <h2 class="catalogTitle">Каталог</h2>
+        </div>
+        {% include 'mainapp/includes/inc_main_menu.html' %}
+    {% endblock %}
+        {% block content %}
+            <div class="container mainProducts">
+                <h4 class="catalogFiltersTitle">Фильтр</h4>
+                <div class="catalogFilters">
+                    <select class="catalogFilters__item">
+                        <option>Коллекция</option>
+                                </select>
+                    <select class="catalogFilters__item">
+                        <option>Материал</option>
+                    </select>
+                    <select class="catalogFilters__item">
+                        <option>Цвет</option>
+                    </select>
+                </div>
+                <div class="products">
+                    {% for product in products %}
+                        <div class="productsItem">
+                            <img src="{{ product.image.url }}" class="productsItem__img">
+                            <div class="productItemInfo">
+                                <h4 class="productItemInfo__name"><a href="#" class="productItemInfo__link">{{ product.category }}</a></h4>
+                                <p class="productItemInfo__price">{{ product.price }}rub</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="catalogMoreInfo">
+                    <span class="catalogMoreInfo__link">ЗАГРУЗИТЬ ЕЩЕ</span>
+                    <div class="catalogMoreInfoLine"></div>
+                    <div class="catalogMoreInfoLine catalogMoreInfoLine_length"></div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+
