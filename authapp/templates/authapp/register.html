@@ -1,0 +1,25 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="login">
+        <div class="h2 text-center head">
+            Вход в систему
+        </div>
+        <form class="register-form" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in register_form %}
+                <div class="register-form__field">
+                    {{ field.label }}{{ field }}
+                </div>
+            {% endfor %}
+            <input class="form-control login-input login-submit register-submit" type="submit" value="зарегистрироваться">
+        </form>
+            <div class="has-acc"><span>Уже есть аккаунт?</span><a href="{% url 'auth:login' %}" class="register-link sign_in"><span>Войти</span></a></div>
+            <div class="without-auth"><a href="{% url 'main:index' %}" class="register-link">Продолжить без авторизации</a></div>
+    </div>
+</div>
+
+
+{% endblock %}

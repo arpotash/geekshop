@@ -9,6 +9,8 @@
 
     {% block css %}
         <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'fontsAwesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/authentication.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&family=Montserrat:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
@@ -30,14 +32,21 @@
                     </div>
                     <p class="aboutUs"><a href="{% url 'about' %}" class="aboutUs__link">о нас</a></p>
                     <ul class="headerRightMenu">
-                        <li class="headerRightMenuItem headerRightMenuItem_login">
-                            <a href="#" class="headerRightMenu__link">вход</a>
-                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'auth:edit' %}" class="headerRightMenu__link">
+                                    {{ user.username|default:'Пользователь' }}</a></li>
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'auth:logout' %}" class="headerRightMenu__link">выход</a></li>
+                        {% else %}
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'auth:login' %}" class="headerRightMenu__link">вход</a></li>
+                        {% endif %}
                         <li class="headerRightMenuItem headerRightMenuItem_search">
                             <a href="#" class="headerRightMenu__link">поиск</a>
-                            <img src="{% static 'img/search.png' %}" class="headerRightMenu__img">
-                        </li>
-                        <li class="headerRightMenuItem headerRightMenuItem_basket">
+                            <img src="{% static 'img/search.png' %}" class="headerRightMenu__img"></li>
+                        <li class="headerRightMenuItem">
+
                             <a href="#" class="headerRightMenu__link">корзина</a>
                             <img src="{% static 'img/basket.png' %}" class="headerRightMenu__img">
                         </li>
@@ -80,5 +89,6 @@
             </div>
         </footer>
     {% endblock %}
+<div class="overlay"></div>
 </body>
 </html>

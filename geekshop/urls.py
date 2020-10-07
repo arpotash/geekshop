@@ -24,6 +24,7 @@ urlpatterns = [
     path('description/', mainapp.description, name='description'),
     path('about/', mainapp.about, name='about'),
     path('admin/', admin.site.urls),
+    path('auth/', include('authapp.urls', namespace='auth')),
 ]
 
 if settings.DEBUG:
