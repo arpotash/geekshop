@@ -1,0 +1,24 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container edit-container">
+    <div class="user_avatar"><img src="/media/{{ user.avatar }}" class="user-avatarImg"></div>
+    <div class="login">
+        <form class="register-form" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in edit_form %}
+            <div class="register-form__field">
+                {{ field.label }}{{ field }}
+            </div>
+            {% endfor %}
+            <input class="form-control edit-btn" type="submit" value="сохранить">
+        </form>
+        <button class="btn btn-round form-control last">
+            <a href="{% url 'main:index' %}" class="login-link">
+                на главную
+            </a>
+        </button>
+    </div>
+</div>
+{% endblock %}

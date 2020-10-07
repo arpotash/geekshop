@@ -1,0 +1,30 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div  class="row justify-content-center">
+        <div  class="col-4">
+            <div class="login">
+                <div class="h2 text-center head">
+                    Вход в систему
+                </div>
+                <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
+                    {% csrf_token %}
+                    <p class="login-text">Введите логин и пароль</p>
+                    {% for field in login_form %}
+                        {{ field }}
+                    {% endfor %}
+                    <input class="form-control login-input login-submit" type="submit" value="войти">
+                    <div class="no-acc"><span>Нет аккаунта?</span><a href="{% url 'auth:register' %}" class="login-link register"><span>Зарегистрируйтесь</span></a></div>
+                    <div class="forget-password"><span>Забыли свой пароль?</span><a href="#" class="login-link"><span>Восстановить</span></a></div>
+                    <i class="fa fa-times register-close" aria-hidden="true"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
