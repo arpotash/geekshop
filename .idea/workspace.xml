@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="300edd16-82fa-4372-973c-7a6798fcdfb6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\User\Desktop\GeekBrains\django\lesson1\geekshop\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1i62jA620OawBUntIR56BWZnizi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="300edd16-82fa-4372-973c-7a6798fcdfb6" name="Default Changelist" comment="" />
+      <created>1601213853776</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601213853776</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="367" y="152" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602105300594">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="367" y="152" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1602105300594" />
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1602104364328">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602104364328" />
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1601648788185">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601648788185" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1601648788185">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601648788185" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1601648788185">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601648788185" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1601648788185">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601648788185" />
+    <state x="349" y="170" key="com.intellij.ide.util.TipDialog" timestamp="1602105301666">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="349" y="170" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1602105301666" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1602001153218">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1602001153218" />
+  </component>
+</project>
