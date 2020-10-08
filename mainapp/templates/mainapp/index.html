@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Главная</title>
+<title xmlns="http://www.w3.org/1999/html">Главная</title>
 {% endblock %}
 {% block menu %}
     <section class="catalog">
@@ -31,7 +31,8 @@
                             <img src="{{ product.image.url }}" class="productsItem__img">
                             <div class="productItemInfo">
                                 <h4 class="productItemInfo__name"><a href="#" class="productItemInfo__link">{{ product.category }}</a></h4>
-                                <p class="productItemInfo__price">{{ product.price }}rub</p>
+                                <p class="productItemInfo__price"><a href="{% url 'basket:add' product.pk %}"
+                                                                     class="productItemInfo__link linkPrice">{{ product.price }}rub</a></p>
                             </div>
                         </div>
                     {% endfor %}
