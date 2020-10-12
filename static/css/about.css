@@ -1,0 +1,126 @@
+.about {
+    padding-bottom: 70px;
+    background: #f2f2f2;
+}
+
+.aboutTitle,
+.plusesRightContentTitle {
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #000000;
+    padding-top: 45px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.aboutWrap {
+    display: grid;
+    grid-template-columns: 349px auto;
+    grid-column-gap: 180px;
+    margin-top: 50px;
+}
+
+.aboutRightContent__title {
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+.aboutRightContent__text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #4F4F4F;
+    margin: 0;
+}
+
+.space {
+    margin-top: 20px;
+}
+
+.pluses {
+    position: relative;
+    min-height: 736px;
+}
+
+.plusesInner {
+    display: flex;
+    width: 87%;
+    float: right;
+}
+
+.plusesLeftImg {
+    position: absolute;
+    top: 36px;
+    left: -49px;
+}
+
+.plusesRightContent {
+    margin-left: 100px;
+}
+
+.plusesRightContentMenu {
+    margin-top: 102.33px;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #4F4F4F;
+    padding-left: 0;
+
+}
+
+.plusesRightContentMenuItem {
+    position: relative;
+    margin-left: 180px;
+}
+
+.plusesRightContentMenuItem:not(:first-child) {
+    margin-top: 77px;
+}
+
+.plusesRightContentMenuItem_delivery:before {
+    content: "";
+    background: url(../img/delivery.png);
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: -55px;
+    top: -10px;
+}
+
+.plusesRightContentMenuItem_guarantee:before {
+    content: "";
+    background: url(../img/guarantee.png);
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    left: -55px;
+    top: -10px;
+}
+
+.plusesRightContentMenuItem_quality:before {
+    content: "";
+    background: url(../img/quality.png);
+    height: 30px;
+    width: 31px;
+    position: absolute;
+    left: -55px;
+    top: -10px;
+}

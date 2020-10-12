@@ -12,6 +12,9 @@
                 </div>
                 <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
                     {% csrf_token %}
+                    {% if next %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                    {% endif %}
                     <p class="login-text">Введите логин и пароль</p>
                     {% for field in login_form %}
                         {{ field }}
