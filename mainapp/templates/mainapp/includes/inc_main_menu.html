@@ -1,7 +1,7 @@
 <ul class="catalogMenu">
     <div class="container">
         {% for link in links %}
-                <li class="catalogMenu__item"><a href="{% url 'main:category' link.pk %}" class="catalogMenu__link">{{ link.name }}</a></li>
+            <li class="catalogMenu__item"><a href="{% url 'main:category' link.pk %}" class="catalogMenu__link">{{ link.name }}</a></li>
         {% endfor %}
     </div>
 </ul>

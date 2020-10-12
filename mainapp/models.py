@@ -31,9 +31,9 @@ class Product(models.Model):
     objects = models.Manager()
     name = models.CharField(max_length=64, verbose_name='Название')
     category = models.ForeignKey(CategoryProduct, on_delete=models.CASCADE, verbose_name='Категория')
+    price = models.DecimalField(verbose_name='Цена', max_digits=8, decimal_places=2, default=0)
     description = models.TextField(max_length=512, blank=True, verbose_name='Описание')
     image = models.ImageField(upload_to='products_image', blank=True, verbose_name='Картинка')
-    price = models.DecimalField(verbose_name='Цена', max_digits=8, decimal_places=2, default=0)
     size = models.CharField(max_length=4, choices=sizes)
     quantity = models.PositiveSmallIntegerField(verbose_name='Количество')
 

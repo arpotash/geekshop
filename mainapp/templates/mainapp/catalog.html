@@ -4,11 +4,14 @@
 {% block title %}
 <title xmlns="http://www.w3.org/1999/html">{{ title }}</title>
 {% endblock %}
+
 {% block menu %}
- <section class="catalog">
-     {% include 'mainapp/includes/inc_main_menu.html' %}
-     {% include 'mainapp/includes/inc_slider.html' %}
-    {% endblock %}
+    <section class="catalog">
+        <div class="container containerUp">
+            <h2 class="catalogTitle">{{ title }}</h2>
+        </div>
+        {% include 'mainapp/includes/inc_main_menu.html' %}
+{% endblock %}
         {% block content %}
             <div class="container mainProducts">
                 <h4 class="catalogFiltersTitle">Фильтр</h4>
@@ -24,7 +27,7 @@
                     </select>
                 </div>
                 <div class="products">
-                    {% for product in products %}
+                    {% for product in catalog %}
                         <div class="productsItem">
                             <img src="{{ product.image.url }}" class="productsItem__img">
                             <div class="productItemInfo">
@@ -34,12 +37,6 @@
                             </div>
                         </div>
                     {% endfor %}
-                </div>
-                <div class="catalogMoreInfo">
-                    <span class="catalogMoreInfo__text"><a href="{% url 'main:catalog' %}" class="catalogMoreInfo__link">
-                        ЗАГРУЗИТЬ ЕЩЕ</a></span>
-                    <div class="catalogMoreInfoLine"></div>
-                    <div class="catalogMoreInfoLine catalogMoreInfoLine_length"></div>
                 </div>
             </div>
         </section>

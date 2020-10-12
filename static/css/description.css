@@ -56,7 +56,7 @@
 
 .descriptionProductRightContentHeadBlock {
     display: grid;
-    grid-template-columns: 116px 290px;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
 
@@ -77,7 +77,7 @@
     font-size: 18.2267px;
     line-height: 120%;
     letter-spacing: 0.03em;
-    color: #000000;
+    color: #000;
 }
 
 .descriptionProductRightContentHeadBlock__sizeTitle,
@@ -90,6 +90,11 @@
     letter-spacing: 0.03em;
     text-transform: lowercase;
     color: #000000;
+}
+
+.descriptionProductRightContentPriceInfo__link {
+    text-decoration: none;
+    color: #000;
 }
 
 .descriptionProductRightContentHeadBlock__sizeTitle {
@@ -124,7 +129,8 @@
     margin-top: 44px;
 }
 
-.descriptionProductRightContentPriceInfo__price {
+.descriptionProductRightContentPriceInfo__price,
+ .hotProductInfo__price{
     font-family: 'Cormorant Unicase', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -133,9 +139,15 @@
     letter-spacing: 0.02em;
     color: #3E3E3E;
     margin: 0;
+    text-decoration: underline;
 }
 
-.descriptionProductRightContentPriceInfo__btn {
+.descriptionProductRightContentPriceInfo__price {
+    text-decoration: none;
+}
+
+.descriptionProductRightContentPriceInfo__btn,
+ .hotProductInfo__add{
     width: 121.43px;
     height: 37.45px;
     background: #000;
@@ -144,15 +156,18 @@
     font-style: normal;
     font-weight: 500;
     font-size: 20.2518px;
-    line-height: 24px;
+    line-height: 37.45px;
     text-transform: uppercase;
+    text-align: center;
     color: #fff;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
-
-.descriptionProductRightContentPriceInfo__btn:focus {
-    outline: none;
+.descriptionProductRightContentPriceInfo__btn:hover {
+    background: #3b3b3b;
+    text-decoration: none;
+    color: #fff;
 }
 
 .descriptionProductRightContentLine {
