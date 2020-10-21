@@ -1,0 +1,30 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="object-title">{{ title }}</div>
+    <div class="userlist-wrap">
+        <div class="object-infoTitle products-info">
+            <div>Картинка</div>
+            <div>Название</div>
+            <div>Категория</div>
+            <div>Цена</div>
+            <div>Размер</div>
+            <div>Количество</div>
+            <div>Редактировать</div>
+            <div>Удалить</div>
+        </div>
+    {% for object in product_list %}
+        <div class="object-info products-info {% if not object.is_active %}isdelete{% endif %}">
+            <img src="/media/{{ object.image|default:'users_avatar/avchik.png' }}" alt="{{ object.name }}" class="product-image">
+            <div>{{ object.name }}</div>
+            <div>{{ object.category }}</div>
+            <div>{{ object.price }}</div>
+            <div>{{ object.size }}</div>
+            <div>{{ object.quantity }}</div>
+            <a href="{% url 'admin:product_update' object.pk %}"><img src="{% static 'img/edit.png' %}" class="delete-basket"></a>
+            <a href="{% url 'admin:product_delete' object.pk %}"><img src="{% static 'img/delete.png' %}" class="delete-basket"></a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -8,6 +8,7 @@ class CategoryProduct(models.Model):
     objects = models.Manager()
     name = models.CharField(max_length=64, unique=True, verbose_name='Название')
     description = models.TextField(max_length=64, blank=True, verbose_name='Описание')
+    is_active = models.BooleanField(verbose_name='активна', default=True)
 
     class Meta:
         verbose_name = 'Категория'
@@ -36,6 +37,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products_image', blank=True, verbose_name='Картинка')
     size = models.CharField(max_length=4, choices=sizes)
     quantity = models.PositiveSmallIntegerField(verbose_name='Количество')
+    is_active = models.BooleanField(verbose_name='активна', default=True)
 
     class Meta:
         verbose_name = 'Продукт'

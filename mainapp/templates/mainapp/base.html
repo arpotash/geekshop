@@ -27,6 +27,8 @@
                     <div class="leftContentWrap">
                         <ul class="headerLeftMenu">
                             <li class="headerLeftMenuItem"><a href="{% url 'main:index' %}" class="headerLeftMenu__link">главная</a></li>
+                            <li class="headerLeftMenuItem headerRightMenuItem_search"><a href="#" class="headerLeftMenu__link">поиск</a>
+                                <img src="{% static 'img/search.png' %}" class="headerRightMenu__img"></li>
                             <li class="headerLeftMenuItem bottomRow"><a href="{% url 'main:catalog' %}" class="headerLeftMenu__link">каталог</a></li>
                             <li class="headerLeftMenuItem bottomRow"><a href="#" class="headerLeftMenu__link">доставка</a></li>
                         </ul>
@@ -45,11 +47,8 @@
                             <li class="headerRightMenuItem">
                                 <a href="{% url 'auth:login' %}" class="headerRightMenu__link">вход</a></li>
                         {% endif %}
-                        <li class="headerRightMenuItem headerRightMenuItem_search">
-                            <a href="#" class="headerRightMenu__link">поиск</a>
-                            <img src="{% static 'img/search.png' %}" class="headerRightMenu__img"></li>
-                        <li class="headerRightMenuItem">
 
+                        <li class="headerRightMenuItem">
                             <a href="{% url 'basket:basket_list' %}" class="headerRightMenu__link">корзина</a>
                             <img src="{% static 'img/basket.png' %}" class="headerRightMenu__img">
                             {% if basket %}
@@ -59,6 +58,11 @@
                                 </div>
                             {% endif %}
                         </li>
+                        {% if user.is_superuser %}
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'admin:admin_page' %}" class="headerRightMenu__link">админка</a>
+                            </li>
+                        {% endif %}
                     </ul>
                     <div class="leftMenuLineAfter leftMenuLineAfter_right"></div>
                 </div>

@@ -1,0 +1,30 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="object-title">{{ title }}</div>
+    <div class="userlist-wrap">
+        <div class="object-infoTitle">
+            <div>Логин</div>
+            <div>E-mail</div>
+            <div>Имя пользователя</div>
+            <div>Возраст</div>
+            <div>Аватарка</div>
+            <div>Роль</div>
+            <div>Редактировать</div>
+            <div>Удалить</div>
+        </div>
+    {% for object in user_list %}
+        <div class="object-info {% if not object.is_active %}isdelete{% endif %}">
+            <div>{{ object.username }}</div>
+            <div>{{ object.email }}</div>
+            <div>{{ object.first_name }}</div>
+            <div>{{ object.age }}</div>
+            <img src="/media/{{ object.avatar|default:'users_avatar/avchik.png' }}" alt="{{ object.username }}" class="user-avatar">
+            <div>{% if object.is_superuser %}администратор{% else %}пользователь{% endif %}</div>
+            <a href="{% url 'admin:user_update' object.pk %}"><img src="{% static 'img/edit.png' %}" class="delete-basket"></a>
+            <a href="{% url 'admin:user_delete' object.pk %}"><img src="{% static 'img/delete.png' %}" class="delete-basket"></a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

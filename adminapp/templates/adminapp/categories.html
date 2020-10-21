@@ -1,0 +1,23 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="object-title">{{ title }}</div>
+    <div class="userlist-wrap">
+        <div class="object-infoTitle category-infoTitle">
+            <div>Название</div>
+            <div>Товары категории</div>
+            <div>Редактировать</div>
+            <div>Удалить</div>
+        </div>
+    {% for object in category_list %}
+        <div class="object-info categories-info {% if not object.is_active %}isdelete{% endif %}">
+            <div>{{ object.name }}</div>
+            <a href="{% url 'admin:products_in_category_read' object.pk %}" class="menu-products__link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            <a href="{% url 'admin:category_update' object.pk %}"><img src="{% static 'img/edit.png' %}" class="delete-basket"></a>
+            <a href="{% url 'admin:category_delete' object.pk %}"><img src="{% static 'img/delete.png' %}" class="delete-basket"></a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

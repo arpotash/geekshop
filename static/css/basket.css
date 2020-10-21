@@ -16,7 +16,7 @@
 
 .basket-item {
     display: grid;
-    grid-template-columns: 1fr 2fr 0.5fr 0.2fr;
+    grid-template-columns: 1fr 2fr 0.8fr 0.3fr;
     grid-column-gap: 50px;
     height: 200px;
     width: 800px;
@@ -58,6 +58,27 @@
     line-height: 120%;
     letter-spacing: 0.03em;
     color: #000;
+}
+
+.basket-item__btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+}
+
+.basket-item__btn:hover {
+    background: #cfcfcf;
+}
+
+.basket-item__btn:focus {
+    border: none;
+    outline: none;
+}
+
+.basket-item__quantity {
+    text-align: center;
+    border: 1px solid #cfcfcf;
 }
 
 .basket-item__remove {
