@@ -21,10 +21,11 @@ import mainapp.views as mainapp
 
 urlpatterns = [
     path('', include('mainapp.urls', namespace='main')),
-    path('description/', mainapp.description, name='description'),
+    path('product:<pk>', mainapp.product, name='product'),
     path('about/', mainapp.about, name='about'),
-    path('admin/', admin.site.urls),
+    path('admin/', include('adminapp.urls', namespace='admin')),
     path('auth/', include('authapp.urls', namespace='auth')),
+    path('basket/', include('basketapp.urls', namespace='basket')),
 ]
 
 if settings.DEBUG:

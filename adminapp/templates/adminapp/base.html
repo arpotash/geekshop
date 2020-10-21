@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block css %}
+        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/fontsAwesome/css/font-awesome.min.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+        <link rel="stylesheet" href="{% static 'css/authentication.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&family=Montserrat:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 header-menu">
+                    <div class="menu-left">
+                        <div class="menu-close">x</div>
+                        <div class="menu-leftContent">
+                            <div class="menu-wrap">
+                                <h4 class="menu-users-title">Пользователи</h4>
+                                <ul class="menu-users">
+                                    <li class="menu-users__item menu-usersAdd"><a href="{% url 'admin:user_create' %}" class="menu-users__link">+</a></li>
+                                    <li class="menu-users__item"><a href="{% url 'admin:user_read' %}" class="menu-products__link"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-wrap">
+                                <h4 class="menu-products-title">Продукты</h4>
+                                <ul class="menu-products">
+                                    <li class="menu-products__item"><a href="{% url 'admin:product_create' %}" class="menu-products__link">+</a></li>
+                                    <li class="menu-products__item"><a href="{% url 'admin:products_read' %}" class="menu-products__link"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-wrap">
+                                <h4 class="menu-categories-title">Категории</h4>
+                                <ul class="menu-categories">
+                                    <li class="menu-categories__item"><a href="{% url 'admin:category_create' %}" class="menu-categories__link">+</a></li>
+                                    <li class="menu-categories__item"><a href="{% url 'admin:category_read' %}" class="menu-categories__link"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+                <div class="col-6">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="text" placeholder="Search here..." class="header-input">
+                </div>
+                <div class="col-1">
+                    <ul class="header-nav">
+                        <li><img src="{% static 'img/flag.png' %}" class="header-language"></li>
+                        <li class="header-menu-span">Русский</li>
+                        <li><i class="fa fa-bell-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
+                        <li><img src="{{ user.avatar.url }}" class="header-avatar"></li>
+                        <li><a href="{% url 'main:index' %}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+    {% block welcome %}
+        <section class="main-content">
+            <h2 class="content-title">Добро пожаловать в админку, {{ user.username }}</h2>
+        </section>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    {% block scripts %}
+      <script src="{% static 'js/admin.js' %}"></script>
+    {% endblock %}
+</body>
+</html>

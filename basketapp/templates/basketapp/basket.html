@@ -1,0 +1,14 @@
+{% extends 'basketapp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <div class="basket-inner">
+        <h2 class="basket-title">{{ title }}</h2>
+        <div class="basket-wrap">
+            {% include 'basketapp/includes/inc_basket_list.html' %}
+            <button class="basket-btn"><a href="" class="basket-btn__link">оформить заказ</a></button>
+        </div>
+    </div>
+  </div>
+{% endblock %}

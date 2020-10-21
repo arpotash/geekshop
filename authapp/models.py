@@ -10,3 +10,4 @@ class ShopUser(AbstractUser):
     email = models.CharField(verbose_name='Email', max_length=64)
     avatar = models.ImageField(upload_to='users_avatar', blank=True, verbose_name='Аватарка')
     age = models.PositiveSmallIntegerField(verbose_name='Возраст')
+    is_active = models.BooleanField(default=True)

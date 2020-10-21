@@ -1,0 +1,83 @@
+[
+  {
+    "category": "SLIP",
+    "name": "Серебряное кольцо с покрытием 'бронза'",
+    "image": "products_image/product4.png",
+    "description": "На создание бронзового кольца Озорная Афродита мастеров вдохновила статуя Венеры Каллипига, главная особенность которой красивые ягодицы. Кольцо символизирует женскую чувственность, сексуальность и игривость. Больше подойдёт в подарок мужчине — ценителю женских прелестей.",
+    "price": "10000.00",
+    "size": "15",
+    "quantity": "6"
+  },
+  {
+    "category": "HER",
+    "name": "Кольцо обручальное из красного золота 585 пробы",
+    "image": "products_image/product1.png",
+    "description": "",
+    "price": "35000.00",
+    "size": "16",
+    "quantity": "9"
+  },
+  {
+    "category": "LOREM",
+    "name": "S10646-K9W-01 Кольцо Серебро 925 пробы",
+    "image": "products_image/product2.png",
+    "description": "",
+    "price": "45000.00",
+    "size": "17",
+    "quantity": "2"
+  },
+  {
+    "category": "OOH",
+    "name": "Кольцо из монеты (Франция) 1920-е годы",
+    "image": "products_image/product3.png",
+    "description": "",
+    "price": "50000.00",
+    "size": "16",
+    "quantity": "2"
+  },
+  {
+    "category": "OPHO",
+    "name": "Кольцо (арт. Т301011662-5) из белого золота 585 пробы",
+    "image": "products_image/product5.png",
+    "description": "",
+    "price": "40000.00",
+    "size": "15",
+    "quantity": "12"
+  },
+  {
+    "category": "LOREM",
+    "name": "Кольцо (арт. Т131012218) из красного золота 585 пробы",
+    "image": "products_image/product6.png",
+    "description": "",
+    "price": "35000.00",
+     "size": "17",
+    "quantity": "12"
+  },
+  {
+    "category": "HER",
+    "name": "Кольцо (арт. Т142018041) из красного золота 585 пробы",
+    "image": "products_image/product7.png",
+    "description": "",
+    "price": "17000.00",
+    "size": "16",
+    "quantity": "3"
+  },
+  {
+    "category": "LOREM",
+    "name": "Кольцо (арт. Т143018815) из красного золота 585 пробы",
+    "image": "products_image/product8.png",
+    "description": "",
+    "price": "80000.00",
+    "size": "16",
+    "quantity": "4"
+  },
+  {
+    "category": "HER",
+    "name": "Кольцо (арт. Т147017562) из красного золота 585 пробы",
+    "image": "products_image/product9.png",
+    "description": "",
+    "price": "65000.00",
+    "size": "15",
+    "quantity": "5"
+  }
+]

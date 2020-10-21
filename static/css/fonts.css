@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "arBonnie";
+    src: url(../fonts/ARBONNIE.ttf);
+    font-style: normal;
+    font-weight: 500;
+};
+
+@font-face {
+    font-family: "CenturyGothic";
+    src: url(../fonts/CenturyGothic.ttf);
+    font-style: normal;
+    font-weight: normal;
+};

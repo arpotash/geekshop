@@ -1,0 +1,122 @@
+.basket-inner {
+    padding: 1% 0 2% 0;
+}
+
+.basket-title {
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38.2267px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.basket-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.8fr 0.3fr;
+    grid-column-gap: 50px;
+    height: 200px;
+    width: 800px;
+    border: 1px solid #000;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.basket-item__image {
+    height: 100%;
+}
+
+.basket-itemInfo, .basket-item__price, .basket-item__remove {
+    padding-top: 20px;
+}
+
+.basket-item__quantity {
+    width: 33%;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.basket-item__title, .basket-item__category, .basket-item__size{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.2267px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.basket-item__price {
+    font-family: 'Dosis', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.2267px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #000;
+}
+
+.basket-item__btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+}
+
+.basket-item__btn:hover {
+    background: #cfcfcf;
+}
+
+.basket-item__btn:focus {
+    border: none;
+    outline: none;
+}
+
+.basket-item__quantity {
+    text-align: center;
+    border: 1px solid #cfcfcf;
+}
+
+.basket-item__remove {
+    color: #666;
+    justify-self: center;
+    align-self: start;
+}
+
+.basket-item__remove:hover {
+    color: #8c8c8c;
+    text-decoration: none;
+}
+
+.basket-btn {
+    width: 20%;
+    height: 37.45px;
+    background: #000;
+    border-radius: 10px;
+    font-family: 'arBonnie', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20.2518px;
+    line-height: 37.45px;
+    text-transform: uppercase;
+    display: block;
+    margin: auto;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.basket-btn__link,
+.basket-btn__link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.basket-btn__link:hover {
+    color: #8c8c8c;
+}
+
