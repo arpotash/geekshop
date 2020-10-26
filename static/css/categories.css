@@ -1,0 +1,3 @@
+.categories-info, .category-infoTitle {
+    grid-template-columns: repeat(4, 1fr);
+}

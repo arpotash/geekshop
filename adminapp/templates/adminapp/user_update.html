@@ -1,0 +1,23 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container edit-container">
+        <div class="login">
+            <form class="register-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for object in form %}
+                <div class="register-form__field">
+                    {{ object.label }}{{ object }}
+                </div>
+                {% endfor %}
+                <input class="form-control edit-btn" type="submit" value="сохранить">
+            </form>
+            <button class="btn btn-round form-control last">
+                <a href="{% url 'admin:user_read' %}" class="login-link">
+                    к списку пользователей
+                </a>
+            </button>
+        </div>
+    </div>
+{% endblock %}

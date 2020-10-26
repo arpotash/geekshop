@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+
+    {% endblock %}
+
+    {% block css %}
+        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/fontsAwesome/css/font-awesome.min.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/authentication.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&family=Montserrat:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+        <header class="header">
+            <div class="container">
+                <h2 class="headerTitle">Ring <span class="headerTitle__span">roll</span></h2>
+                <div class="headerMenu">
+                    <div class="leftContentWrap">
+                        <ul class="headerLeftMenu">
+                            <li class="headerLeftMenuItem"><a href="{% url 'main:index' %}" class="headerLeftMenu__link">главная</a></li>
+                            <li class="headerLeftMenuItem headerRightMenuItem_search"><a href="#" class="headerLeftMenu__link">поиск</a>
+                                <img src="{% static 'img/search.png' %}" class="headerRightMenu__img"></li>
+                            <li class="headerLeftMenuItem bottomRow"><a href="{% url 'main:catalog' %}" class="headerLeftMenu__link">каталог</a></li>
+                            <li class="headerLeftMenuItem bottomRow"><a href="#" class="headerLeftMenu__link">доставка</a></li>
+                        </ul>
+                        <div class="leftMenuLineAfter"></div>
+
+                    </div>
+                    <p class="aboutUs"><a href="{% url 'about' %}" class="aboutUs__link">о нас</a></p>
+                    <ul class="headerRightMenu">
+                        {% if user.is_authenticated %}
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'auth:edit' %}" class="headerRightMenu__link">
+                                    {{ user.username|default:'Пользователь' }}</a></li>
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'auth:logout' %}" class="headerRightMenu__link">выход</a></li>
+                        {% else %}
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'auth:login' %}" class="headerRightMenu__link">вход</a></li>
+                        {% endif %}
+
+                        <li class="headerRightMenuItem">
+                            <a href="{% url 'basket:basket_list' %}" class="headerRightMenu__link">корзина</a>
+                            <img src="{% static 'img/basket.png' %}" class="headerRightMenu__img">
+                            {% if basket %}
+                                <div class="basket">
+                                    {{ basket.0.total_cost|floatformat:0 }}руб
+                                    ({{ basket.0.total_quantity }} шт)
+                                </div>
+                            {% endif %}
+                        </li>
+                        {% if user.is_superuser %}
+                            <li class="headerRightMenuItem">
+                                <a href="{% url 'admin:admin_page' %}" class="headerRightMenu__link">админка</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <div class="leftMenuLineAfter leftMenuLineAfter_right"></div>
+                </div>
+            </div>
+        </header>
+    {% endblock %}
+    {% block menu %}
+
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+        <footer class="footer">
+            <div class="container">
+                <div class="footerInner">
+                    <address class="contacts">
+                        <p class="contacts__item">2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
+                        <p class="contacts__item">10:00 - 20:00</p>
+                        <p class="contacts__item">(239) 555-0108</p>
+                    </address>
+                    <ul class="footerMenu">
+                        <li class="footerMenu__item"><a href="#" class="footerMenu__link">главная</a></li>
+                        <li class="footerMenu__item"><a href="#" class="footerMenu__link">поиск</a></li>
+                        <li class="footerMenu__item"><a href="#" class="footerMenu__link">каталог</a></li>
+                        <li class="footerMenu__item"><a href="#" class="footerMenu__link">корзина</a></li>
+                        <li class="footerMenu__item"><a href="#" class="footerMenu__link">доставка</a></li>
+                        <li class="footerMenu__item"><a href="#" class="footerMenu__link">вход</a></li>
+                    </ul>
+                    <div class="footerSocials">
+                        <i class="fab fa-facebook footerSocials__item"></i>
+                        <i class="fab fa-instagram footerSocials__item"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {% endblock %}
+    {% block scripts %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    {% endblock %}
+</body>
+</html>
