@@ -6,9 +6,9 @@
         <div class="login">
             <form class="register-form" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                {% for field in update_form %}
+                {% for object in form %}
                 <div class="register-form__field">
-                    {{ field.label }}{{ field }}
+                    {{ object.label }}{{ object }}
                 </div>
                 {% endfor %}
                 <input class="form-control edit-btn" type="submit" value="сохранить">

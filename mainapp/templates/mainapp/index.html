@@ -23,6 +23,16 @@
                         <option>Цвет</option>
                     </select>
                 </div>
+                <div class="paginator">
+                    {% if products.has_next %}
+                        <a href="{% url 'main:page' products.next_page_number %}">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if products.has_previous %}
+                        <a href="{% url 'main:page' products.previous_page_number %}">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
                 <div class="products">
                     {% for product in products %}
                         <div class="productsItem">

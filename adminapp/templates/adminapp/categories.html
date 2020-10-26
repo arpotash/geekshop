@@ -11,7 +11,7 @@
             <div>Редактировать</div>
             <div>Удалить</div>
         </div>
-    {% for object in category_list %}
+    {% for object in object_list %}
         <div class="object-info categories-info {% if not object.is_active %}isdelete{% endif %}">
             <div>{{ object.name }}</div>
             <a href="{% url 'admin:products_in_category_read' object.pk %}" class="menu-products__link"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -19,5 +19,18 @@
             <a href="{% url 'admin:category_delete' object.pk %}"><img src="{% static 'img/delete.png' %}" class="delete-basket"></a>
         </div>
     {% endfor %}
+    </div>
+    <div class="paginator">
+        {% with ''|center:page_obj.paginator.num_pages as range %}
+            {% for _ in range %}
+                <div class="paginator__item">
+                    {% if forloop.counter == page_obj.number %}
+                        <p class="paginator-text">{{ forloop.counter }}</p>
+                    {% else %}
+                        <p class="paginator-text"><a href="{% url 'admin:category_page' forloop.counter %}" class="paginator-link">{{ forloop.counter }}</a></p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% endwith %}
     </div>
 {% endblock %}

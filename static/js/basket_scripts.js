@@ -1,5 +1,5 @@
 window.onload = function () {
-    $(".btn-minus").click(function() {
+    $('.basket-wrap').on('click', '.btn-minus', function() {
         var currProduct = event.target.parentNode;
         var currHref = currProduct.querySelector('.basket-item__quantity');
         console.log(currHref);
@@ -14,7 +14,7 @@ window.onload = function () {
         event.preventDefault();
     });
 
-    $(".btn-plus").click(function() {
+    $('.basket-wrap').on('click', '.btn-plus', function() {
         var currProduct = event.target.parentNode;
         var currHref = currProduct.querySelector('.basket-item__quantity');
         console.log(currHref);

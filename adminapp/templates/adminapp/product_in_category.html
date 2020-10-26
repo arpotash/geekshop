@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <div class="object-title">{{ title }} {{ current_category }}</div>
+    <div class="object-title">{{ title }} {{ category_name }}</div>
     <div class="userlist-wrap">
         <div class="object-infoTitle products-inCategory-info">
             <div>Картинка</div>
@@ -13,7 +13,7 @@
             <div>Редактировать</div>
             <div>Удалить</div>
         </div>
-    {% for object in products_in_category %}
+    {% for object in object_list %}
         <div class="object-info products-inCategory-info {% if not object.is_active %}isdelete{% endif %}">
             <img src="/media/{{ object.image|default:'users_avatar/avchik.png' }}" alt="{{ object.name }}" class="product-image">
             <div>{{ object.name }}</div>
@@ -25,4 +25,17 @@
         </div>
     {% endfor %}
     </div>
+    <div class="paginator">
+            {% with ''|center:page_obj.paginator.num_pages as range %}
+                {% for _ in range %}
+                    <div class="paginator__item">
+                    {% if forloop.counter == page_obj.number %}
+                        <p class="paginator-text">{{ forloop.counter }}</p>
+                    {% else %}
+                        <p class="paginator-text"><a href="{% url 'admin:products_in_category_page' category.pk forloop.counter %}" class="paginator-link">{{ forloop.counter }}</a></p>
+                    {% endif %}
+                    </div>
+                {% endfor %}
+            {% endwith %}
+        </div>
 {% endblock %}

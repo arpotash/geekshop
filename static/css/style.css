@@ -147,6 +147,24 @@ body {
     cursor: pointer;
 }
 
+.fa-long-arrow-right, .fa-long-arrow-left {
+    position: absolute;
+    top: 38%;
+    background: #fff;
+    color: #675757;
+    border-radius: 50%;
+    border: 2px solid #675757;
+    padding: 20px;
+}
+
+.fa-long-arrow-right {
+    left: 10%;
+}
+
+.fa-long-arrow-left {
+    right: 10%;
+}
+
 .catalog {
     background: #ccc;
     min-height: 300px;
@@ -188,6 +206,7 @@ body {
 
 .mainProducts {
     min-height: 800px;
+    position: relative;
 }
 
 .catalogMenu__item {
