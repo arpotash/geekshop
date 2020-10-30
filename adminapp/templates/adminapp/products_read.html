@@ -26,18 +26,20 @@
                 <a href="{% url 'admin:product_delete' object.pk %}"><img src="{% static 'img/delete.png' %}" class="delete-basket"></a>
             </div>
         {% endfor %}
-        <div class="paginator">
-            {% with ''|center:page_obj.paginator.num_pages as range %}
-                {% for _ in range %}
-                    <div class="paginator__item">
-                    {% if forloop.counter == page_obj.number %}
-                        <p class="paginator-text">{{ forloop.counter }}</p>
-                    {% else %}
-                        <p class="paginator-text"><a href="{% url 'admin:products_page' forloop.counter %}" class="paginator-link">{{ forloop.counter }}</a></p>
-                    {% endif %}
-                    </div>
-                {% endfor %}
-            {% endwith %}
-        </div>
+        {% if paginator.count > page_obj|length %}
+            <div class="paginator">
+                {% with ''|center:page_obj.paginator.num_pages as range %}
+                    {% for _ in range %}
+                        <div class="paginator__item">
+                        {% if forloop.counter == page_obj.number %}
+                            <p class="paginator-text">{{ forloop.counter }}</p>
+                        {% else %}
+                            <p class="paginator-text"><a href="{% url 'admin:products_page' forloop.counter %}" class="paginator-link">{{ forloop.counter }}</a></p>
+                        {% endif %}
+                        </div>
+                    {% endfor %}
+                {% endwith %}
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

@@ -35,14 +35,14 @@
                 </div>
                 <div class="products">
                     {% for product in products %}
-                        <div class="productsItem">
-                            <img src="{{ product.image.url }}" class="productsItem__img">
-                            <div class="productItemInfo">
-                                <h4 class="productItemInfo__name"><a href="{% url 'product' product.pk %}"
-                                                                     class="productItemInfo__link">{{ product.category }}</a></h4>
-                                <p class="productItemInfo__price productItemInfo__link linkPrice">{{ product.price }}rub</p>
+                            <div class="productsItem">
+                                <img src="{{ product.image.url }}" class="productsItem__img">
+                                <div class="productItemInfo">
+                                    <h4 class="productItemInfo__name"><a href="{% url 'product' product.pk %}"
+                                                                         class="productItemInfo__link">{{ product.category }}</a></h4>
+                                    <p class="productItemInfo__price productItemInfo__link linkPrice">{{ product.price }}rub</p>
+                                </div>
                             </div>
-                        </div>
                     {% endfor %}
                 </div>
                 <div class="catalogMoreInfo">

@@ -21,7 +21,7 @@ def get_basket(user):
 
 
 def hot_products():
-    _product = Product.objects.all()
+    _product = Product.objects.filter(is_active=True)
     hot_list = list(random.sample(list(_product), 2))
     return hot_list
 
@@ -29,11 +29,11 @@ def hot_products():
 def main(request, pk=None, page=1):
     title = 'главная'
     if pk is None:
-        products = Product.objects.all()[:9]
+        products = Product.objects.filter(is_active=True)[:9]
         category = ''
     else:
         category = get_object_or_404(CategoryProduct, pk=pk)
-        products = Product.objects.filter(category=category)
+        products = Product.objects.filter(category=category, is_active=True)
     paginator = Paginator(products, 2)
     try:
         products_paginator = paginator.page(page)
@@ -48,7 +48,6 @@ def main(request, pk=None, page=1):
         'products': products_paginator,
         'category': category,
         'links': links,
-        'basket': get_basket(request.user),
         'hot_product': hot_product,
     }
     return render(request, 'mainapp/index.html', content)
@@ -56,8 +55,8 @@ def main(request, pk=None, page=1):
 
 def catalog(request):
     title = 'каталог'
-    _catalog = Product.objects.all()
-    content = {'title': title, 'catalog': _catalog, 'links': links, 'basket': get_basket(request.user)}
+    _catalog = Product.objects.filter(is_active=True)
+    content = {'title': title, 'catalog': _catalog, 'links': links}
     return render(request, 'mainapp/catalog.html', content)
 
 
@@ -66,13 +65,11 @@ def product(request, pk=None):
     content = {
         'links': links,
         'product': _product,
-        'basket': get_basket(request.user)
     }
     return render(request, 'mainapp/product.html', content)
 
 
 def about(request):
     content = {
-        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/aboutUs.html', content)
