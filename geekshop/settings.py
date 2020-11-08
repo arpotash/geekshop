@@ -137,7 +137,7 @@ AUTH_USER_MODEL = 'authapp.ShopUser'
 
 LOGIN_URL = '/auth/login/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
 DOMAIN_NAME = 'http://localhost:8000'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -151,5 +151,5 @@ AUTHENTICATION_BACKEND = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = '7654965'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'WYFUHmqkNY16pt2cWBm7'
+SOCIAL_AUTH_VK_OAUTH2_KEY = ''
+SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
