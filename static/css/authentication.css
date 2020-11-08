@@ -201,3 +201,57 @@ body {
     grid-column-start: 1;
     grid-column-end: 4;
 }
+
+.auth-login {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 250px;
+    background: #fff;
+    align-items: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.auth-login-icon {
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.auth-login-icon__link {
+    color: #000;
+}
+
+.auth-login-icon__item {
+    margin-top: 25%;
+}
+
+.auth-login__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.vk-auth {
+    background: #2e8bf4;
+}
+
+.vk-icon {
+    color: #fff;
+}
+
+.google-auth__image {
+    height: 50%;
+    width: 50%;
+    margin-top: 10%;
+}
+
+.github-auth {
+    background: #24292e;
+}
+
+.github-icon {
+    color: #fff;
+}

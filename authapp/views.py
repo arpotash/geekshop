@@ -1,4 +1,5 @@
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -16,22 +17,6 @@ def send_verify_email(user):
     subject = f'Активация пользователя {user.username}'
     message = f'Для подтверждения перейдите по ссылке:\n {settings.DOMAIN_NAME}{verify_link}'
     return send_mail(subject, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
-
-
-def verify(request, email, activation_key):
-    try:
-        user = ShopUser.objects.get(email=email)
-        if user.actvation_key == activation_key and not user.is_activation_key_expired():
-            user.is_active = True
-            user.save()
-            auth.login(request, user)
-            return render(request, 'authapp/verification.html')
-        else:
-            print(f'error activation user: {email}')
-            return render(request, 'authapp/verification.html')
-    except Exception as e:
-        print(e.args)
-        return HttpResponseRedirect(reverse('main'))
 
 
 def login(request):
@@ -69,7 +54,13 @@ def register(request):
 
         if register_form.is_valid():
             user = register_form.save()
-            return HttpResponseRedirect(reverse('auth:login'))
+            if send_verify_email(user):
+                print('сообщение подтверждения отправлено')
+                return HttpResponseRedirect(reverse('auth:login'))
+            else:
+                print('ошибка отправки сообщения')
+                return HttpResponseRedirect(reverse('auth:login'))
+
     else:
         register_form = ShopUserRegisterForm()
 
@@ -81,6 +72,7 @@ def register(request):
     return render(request, 'authapp/register.html', content)
 
 
+@login_required
 def edit(request):
     title = 'редактирование'
     if request.method == 'POST':

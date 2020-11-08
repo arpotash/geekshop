@@ -12,7 +12,7 @@ class ShopUser(AbstractUser):
     first_name = models.CharField(verbose_name='Имя', max_length=64)
     email = models.CharField(verbose_name='Email', max_length=64)
     avatar = models.ImageField(upload_to='users_avatar', blank=True, verbose_name='Аватарка')
-    age = models.PositiveSmallIntegerField(verbose_name='Возраст')
+    age = models.PositiveSmallIntegerField(verbose_name='Возраст', default=18)
     is_active = models.BooleanField(default=True)
     activation_key = models.CharField(max_length=128, blank=True)
     activation_key_expires = models.DateTimeField(default=(now() + timedelta(hours=48)))

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authapp',
     'basketapp',
     'adminapp',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -136,21 +137,19 @@ AUTH_USER_MODEL = 'authapp.ShopUser'
 
 LOGIN_URL = '/auth/login/'
 
-DOMAIN_NAME = 'http://localhost:8088'
-
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = '25'
-#EMAIL_HOST_USER = 'django@geekshop.local'
-#EMAIL_HOST_PASSWORD = 'geekshop'
-EMAIL_USE_SSL = False
-EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None
-
-
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
-#DOMAIN_NAME = 'http://localhost:8000'
-#EMAIL_HOST = 'mymail.com'
-#EMAIL_PORT = '25'
-#EMAIL_HOST_USER = 'user1'
-#EMAIL_HOST_PASSWORD = 'user1'
-#EMAIL_USE_SSL = True
+DOMAIN_NAME = 'http://localhost:8000'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'login'
+EMAIL_HOST_PASSWORD = 'password'
+
+AUTHENTICATION_BACKEND = (
+    'social_core.backends.vk.VKOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7654965'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'WYFUHmqkNY16pt2cWBm7'
