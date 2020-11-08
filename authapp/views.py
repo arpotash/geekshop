@@ -67,7 +67,6 @@ def register(request):
     title = 'регистрация'
     if request.method == 'POST':
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
-
         if register_form.is_valid():
             user = register_form.save()
             if send_verify_email(user):

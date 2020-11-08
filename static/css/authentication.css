@@ -202,6 +202,10 @@ body {
     grid-column-end: 4;
 }
 
+.verify-block {
+    text-align: center;
+}
+
 .auth-login {
     display: flex;
     justify-content: space-between;
@@ -255,3 +259,4 @@ body {
 .github-icon {
     color: #fff;
 }
+

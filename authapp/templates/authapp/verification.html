@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <h2>Поздравляем!</h2>
-        <p>Пользователь {{ user.username }} активирован!</p>
-    {% else %}
-        <h2>Активация не пройдена</h2>
-    {% endif %}
-    <a href="{% url 'main:index' %}" class="btn btn-primary">Главная</a>
+    <div class="verify-block">
+        {% if user.is_authenticated %}
+            <h2>Поздравляем!</h2>
+            <p>Пользователь {{ user.username }} активирован!</p>
+        {% else %}
+            <h2>Активация не пройдена</h2>
+        {% endif %}
+        <a href="{% url 'main:index' %}" class="btn btn-primary">Главная</a>
+    </div>
 {% endblock %}
