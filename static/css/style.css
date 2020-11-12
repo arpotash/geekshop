@@ -111,7 +111,7 @@ body {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 1.5vw;
     line-height: 120%;
     letter-spacing: 0.03em;
     font-variant: small-caps;
@@ -213,7 +213,7 @@ body {
     font-family: 'arBonnie', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 61.4654px;
+    font-size: 8vh;
     line-height: 73px;
     color: #fff;
 }

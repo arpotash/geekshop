@@ -1,26 +1,32 @@
 [
     {
         "name": "HER",
-        "description": ""
+        "description": "",
+        "is_active": "1"
     },
     {
         "name": "OOH",
-        "description": ""
+        "description": "",
+        "is_active": "1"
     },
     {
         "name": "SLIP",
-        "description": ""
+        "description": "",
+        "is_active": "1"
     },
     {
         "name": "OPHO",
-        "description": ""
+        "description": "",
+        "is_active": "1"
     },
      {
         "name": "LOREM",
-        "description": ""
+        "description": "",
+        "is_active": "1"
     },
      {
         "name": "O&O",
-        "description": ""
+        "description": "",
+        "is_active": "1"
     }
 ]

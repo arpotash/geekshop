@@ -6,7 +6,8 @@
     "description": "На создание бронзового кольца Озорная Афродита мастеров вдохновила статуя Венеры Каллипига, главная особенность которой красивые ягодицы. Кольцо символизирует женскую чувственность, сексуальность и игривость. Больше подойдёт в подарок мужчине — ценителю женских прелестей.",
     "price": "10000.00",
     "size": "15",
-    "quantity": "6"
+    "quantity": "6",
+    "is_active": "1"
   },
   {
     "category": "HER",
@@ -15,7 +16,8 @@
     "description": "",
     "price": "35000.00",
     "size": "16",
-    "quantity": "9"
+    "quantity": "9",
+    "is_active": "1"
   },
   {
     "category": "LOREM",
@@ -24,7 +26,8 @@
     "description": "",
     "price": "45000.00",
     "size": "17",
-    "quantity": "2"
+    "quantity": "2",
+    "is_active": "1"
   },
   {
     "category": "OOH",
@@ -33,7 +36,8 @@
     "description": "",
     "price": "50000.00",
     "size": "16",
-    "quantity": "2"
+    "quantity": "2",
+    "is_active": "1"
   },
   {
     "category": "OPHO",
@@ -42,7 +46,8 @@
     "description": "",
     "price": "40000.00",
     "size": "15",
-    "quantity": "12"
+    "quantity": "12",
+    "is_active": "1"
   },
   {
     "category": "LOREM",
@@ -51,7 +56,8 @@
     "description": "",
     "price": "35000.00",
      "size": "17",
-    "quantity": "12"
+    "quantity": "12",
+    "is_active": "1"
   },
   {
     "category": "HER",
@@ -60,7 +66,8 @@
     "description": "",
     "price": "17000.00",
     "size": "16",
-    "quantity": "3"
+    "quantity": "3",
+    "is_active": "1"
   },
   {
     "category": "LOREM",
@@ -69,7 +76,8 @@
     "description": "",
     "price": "80000.00",
     "size": "16",
-    "quantity": "4"
+    "quantity": "4",
+    "is_active": "1"
   },
   {
     "category": "HER",
@@ -78,6 +86,7 @@
     "description": "",
     "price": "65000.00",
     "size": "15",
-    "quantity": "5"
+    "quantity": "5",
+    "is_active": "1"
   }
 ]

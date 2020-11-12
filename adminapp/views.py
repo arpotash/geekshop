@@ -9,7 +9,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, T
 
 from adminapp.forms import ShopUserAdminEditForm, ProductCategoryEditForm, ProductEditForm
 from authapp.forms import ShopUserEditForm, ShopUserRegisterForm
-from authapp.models import ShopUser
+from authapp.models import ShopUser, ShopUserProfile
 from mainapp.models import CategoryProduct, Product
 
 
