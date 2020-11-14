@@ -1,0 +1,26 @@
+{% load static %}
+<h3 class="hotTitle text-danger ">Горячее предложение</h3>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        </div>
+        {% for hot_prod in hot_product %}
+            <div class="carousel-item">
+                <div class="hotProduct">
+                    <img src="{{ hot_prod.image.url }}" class="hotProductImg">
+                    <div class="hotProductInfo">
+                        <h4 class="hotProductInfo__name"><a href="{% url 'product' hot_prod.pk %}" class="hotProductInfo__link">
+                            {{ hot_prod.name }}</a></h4>
+                        <p class="hotProductInfo__price text-danger">{{ hot_prod.price }}руб</p>
+                        <a href="{% url 'basket:add' hot_prod.pk %}" class="hotProductInfo__add">В корзину</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

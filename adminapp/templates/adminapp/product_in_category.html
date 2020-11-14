@@ -1,0 +1,43 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="object-title">{{ title }} {{ category_name }}</div>
+    <div class="userlist-wrap">
+        <div class="object-infoTitle products-inCategory-info">
+            <div>Картинка</div>
+            <div>Название</div>
+            <div>Цена</div>
+            <div>Размер</div>
+            <div>Количество</div>
+            <div>Редактировать</div>
+            <div>Удалить</div>
+        </div>
+    {% for object in object_list %}
+        <div class="object-info products-inCategory-info {% if not object.is_active %}isdelete{% endif %}">
+            <img src="/media/{{ object.image|default:'users_avatar/avchik.png' }}" alt="{{ object.name }}" class="product-image">
+            <div>{{ object.name }}</div>
+            <div>{{ object.price }}</div>
+            <div>{{ object.size }}</div>
+            <div>{{ object.quantity }}</div>
+            <a href="{% url 'admin:product_update' object.pk %}"><img src="{% static 'img/edit.png' %}" class="delete-basket"></a>
+            <a href="{% url 'admin:product_delete' object.pk %}"><img src="{% static 'img/delete.png' %}" class="delete-basket"></a>
+        </div>
+    {% endfor %}
+    </div>
+    {% if paginator.count > page_obj|length %}
+        <div class="paginator">
+            {% with ''|center:page_obj.paginator.num_pages as range %}
+                {% for _ in range %}
+                    <div class="paginator__item">
+                        {% if forloop.counter == page_obj.number %}
+                            <p class="paginator-text">{{ forloop.counter }}</p>
+                        {% else %}
+                            <p class="paginator-text"><a href="{% url 'admin:products_in_category_page' category.pk forloop.counter %}" class="paginator-link">{{ forloop.counter }}</a></p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    {% endif %}
+{% endblock %}

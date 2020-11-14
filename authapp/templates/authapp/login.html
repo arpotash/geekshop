@@ -12,11 +12,22 @@
                 </div>
                 <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
                     {% csrf_token %}
+                    {% if next %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                    {% endif %}
                     <p class="login-text">Введите логин и пароль</p>
                     {% for field in login_form %}
                         {{ field }}
                     {% endfor %}
                     <input class="form-control login-input login-submit" type="submit" value="войти">
+                    <div class="auth-login form-control login-input login-submit">
+                        <div class="auth-login-icon vk-auth">
+                            <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/" class="auth-login-icon__link"><i class="fab fa-vk auth-login-icon__item vk-icon" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="auth-login-icon github-auth">
+                            <a href="{% url 'social:begin' 'github' %}?next=/" class="auth-login-icon__link"><i class="fab fa-github auth-login-icon__item github-icon" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
                     <div class="no-acc"><span>Нет аккаунта?</span><a href="{% url 'auth:register' %}" class="login-link register"><span>Зарегистрируйтесь</span></a></div>
                     <div class="forget-password"><span>Забыли свой пароль?</span><a href="#" class="login-link"><span>Восстановить</span></a></div>
                     <i class="fa fa-times register-close" aria-hidden="true"></i>

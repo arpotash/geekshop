@@ -3,11 +3,16 @@
 
 {% block content %}
 <div class="container edit-container">
-    <div class="user_avatar"><img src="/media/{{ user.avatar }}" class="user-avatarImg"></div>
+    <div class="user_avatar"><img src="/media/{{ user.avatar|default:'users_avatar/default-ava.png' }}" class="user-avatarImg"></div>
     <div class="login">
         <form class="register-form" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in edit_form %}
+            <div class="register-form__field">
+                {{ field.label }}{{ field }}
+            </div>
+            {% endfor %}
+            {% for field in profile_form %}
             <div class="register-form__field">
                 {{ field.label }}{{ field }}
             </div>
