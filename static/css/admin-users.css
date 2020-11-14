@@ -1,0 +1,44 @@
+@import url(categories.css);
+
+.object-title {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.userlist-wrap {
+    width: 100%;
+    margin-left: auto;
+    display: block;
+    margin: auto;
+}
+
+.object-info,
+.object-infoTitle {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr 0.5fr 0.5fr;
+    grid-column-gap: 60px;
+    justify-items: center;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.user-infoTitle {
+    font-size: 18px;
+}
+
+.user-avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.delete-basket {
+    height: 30px;
+    width: 30px;
+}
+
+.categories-info, .category-infoTitle {
+     grid-template-columns: repeat(4, 1fr);
+}
