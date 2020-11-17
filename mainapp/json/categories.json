@@ -1,0 +1,32 @@
+[
+    {
+        "name": "HER",
+        "description": "",
+        "is_active": "1"
+    },
+    {
+        "name": "OOH",
+        "description": "",
+        "is_active": "1"
+    },
+    {
+        "name": "SLIP",
+        "description": "",
+        "is_active": "1"
+    },
+    {
+        "name": "OPHO",
+        "description": "",
+        "is_active": "1"
+    },
+     {
+        "name": "LOREM",
+        "description": "",
+        "is_active": "1"
+    },
+     {
+        "name": "O&O",
+        "description": "",
+        "is_active": "1"
+    }
+]

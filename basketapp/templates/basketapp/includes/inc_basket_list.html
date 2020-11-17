@@ -1,0 +1,18 @@
+{% if basket_items %}
+    <p>ВСЕГО ({{ basket_items.0.total_quantity }} шт.) {{ basket_items.0.total_cost }}руб.</p>
+{% endif %}
+{% for basket in basket_items %}
+    <div class="basket-item">
+        <img src="{{ basket.product.image.url }}" class="basket-item__image">
+        <div class="basket-itemInfo">
+            <p class="basket-item__title">{{ basket.product.name }}</p>
+            <p class="basket-item__category">{{ basket.product.category }}</p>
+            <p class="basket-item__size">РАЗМЕР: {{ basket.product.size }}</p>
+            <button class="basket-item__btn btn-minus" id="minus">-</button>
+            <input type="number" name="{{ basket.pk }}" readonly value="{{ basket.quantity }}" class="basket-item__quantity">
+            <button class="basket-item__btn btn-plus" id="plus">+</button>
+        </div>
+        <p class="basket-item__price">{{ basket.product_cost }} р.</p>
+        <a href="{% url 'basket:remove' basket.pk %}" class="basket-item__remove">x</a>
+    </div>
+{% endfor %}

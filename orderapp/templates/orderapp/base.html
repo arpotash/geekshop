@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block css %}
+        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&family=Montserrat:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+    {% block js %}
+       <script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+       <script src="{% static 'js/orders_scripts.js' %}"></script>
+    {% endblock %}
+
+</head>
+<body>
+    {% block header %}
+        <header class="header">
+            <div class="container">
+                <h2 class="headerTitle">Ring <span class="headerTitle__span">roll</span></h2>
+                <div class="headerMenu">
+                    <div class="leftContentWrap">
+                        <ul class="headerLeftMenu">
+                            <li class="headerLeftMenuItem"><a href="{% url 'main:index' %}" class="headerLeftMenu__link">главная</a></li>
+                            <li class="headerLeftMenuItem headerRightMenuItem_search"><a href="#" class="headerLeftMenu__link">поиск</a>
+                                <img src="{% static 'img/search.png' %}" class="headerRightMenu__img"></li>
+                        </ul>
+                        <div class="leftMenuLineAfter"></div>
+
+                    </div>
+                    <p class="aboutUs"><a href="{% url 'about' %}" class="aboutUs__link">о нас</a></p>
+                    <ul class="headerRightMenu">
+                        <li class="headerRightMenuItem"><a href="{% url 'main:catalog' %}" class="headerRightMenu__link">каталог</a></li>
+                        <li class="headerRightMenuItem"><a href="#" class="headerRightMenu__link">доставка</a></li>
+                    </ul>
+                    <div class="leftMenuLineAfter leftMenuLineAfter_right"></div>
+                </div>
+            </div>
+        </header>
+    {% endblock %}
+    <div class="order_container">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>

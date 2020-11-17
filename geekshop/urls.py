@@ -21,10 +21,14 @@ import mainapp.views as mainapp
 
 urlpatterns = [
     path('', include('mainapp.urls', namespace='main')),
-    path('description/', mainapp.description, name='description'),
-    path('about/', mainapp.about, name='about'),
-    path('admin/', admin.site.urls),
+    path('product:<pk>', mainapp.ProductObject.as_view(), name='product'),
+    path('about/', mainapp.About.as_view(), name='about'),
     path('auth/', include('authapp.urls', namespace='auth')),
+    path('basket/', include('basketapp.urls', namespace='basket')),
+    path('', include('social_django.urls', namespace='social')),
+    path('admin/', include('adminapp.urls', namespace='admin')),
+    #path('admin/', admin.site.urls, name='admin'),
+    path('order/', include('orderapp.urls', namespace='order'))
 ]
 
 if settings.DEBUG:

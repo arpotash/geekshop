@@ -1,0 +1,79 @@
+.order_container {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+.order-title {
+    margin: 50px 0;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+}
+
+.delete-basket {
+    height: 30px;
+    width: 30px;
+}
+
+.btn-order-new,
+.btn-order-save {
+    background: #e3e3e3;
+    border-radius: 10px;
+}
+
+.btn-order-save {
+    color: #949494;
+    font-family: 'Raleway', sans-serif;
+    width: 60%;
+}
+
+.btn-order-save:hover {
+    color: #fff;
+    background: #dbdbdb;
+}
+
+.btn-order-new__link {
+    color: #949494;
+    font-family: 'Raleway', sans-serif;
+}
+
+.btn-order-new__link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.order-list {
+    margin-top: 5px;
+    width: 60%;
+    border-radius: 8px;
+}
+
+.order-list__link {
+    color: #e6e6e6;
+}
+
+.order-list__link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-delete {
+    width: 60%;
+    margin-top: 5px;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 0;
+    height: 140px;
+    width: 800px;
+    border: 1px solid #000;
+    margin-bottom: 30px;
+    position: relative;
+    align-items: center;
+}
+
+.order-item__image {
+    height: 100%;
+    width: 100%;
+}

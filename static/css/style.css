@@ -1,0 +1,566 @@
+@import url(fonts.css);
+@import url(description.css);
+@import url(about.css);
+@import url(authentication.css);
+@import url(basket.css);
+@import url(order.css);
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 1180px;
+    margin: auto;
+    min-height: inherit;
+}
+
+.header {
+    background: #fafafa;
+    min-height: 256px;
+}
+
+.headerTitle {
+    margin: auto;
+    text-align: center;
+    padding-top: 23px;
+    font-family: 'arBonnie', sans-serif;
+    font-size: 102.909px;
+    line-height: 78px;
+    color: #272420;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.headerTitle span {
+    font-family: 'CenturyGothic';
+    font-weight: 400;
+    padding: 0;
+    position: relative;
+    font-size: 58.3152px;
+    line-height: 100px;
+    top: -15px;
+    text-transform: lowercase;
+}
+
+.headerMenu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerLeftMenu,
+.headerRightMenu {
+    float: left;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    width: auto;
+    grid-template-columns: 130px 150px;
+    grid-gap: 10px;
+}
+
+.leftMenuLineAfter {
+    height: 1.5px;
+    background: #000;
+    width: 43%;
+    position: absolute;
+    top: 212px;
+    left: 0;
+}
+
+.leftMenuLineAfter_right {
+    position: absolute;
+    top: 212px;
+    left: 56%;
+    width: 44%;
+}
+
+.headerRightMenu {
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+}
+
+
+.aboutUs {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    font-variant: small-caps;
+    position: relative;
+    margin: 0;
+    left: -20px;
+}
+
+.aboutUs__link {
+    text-decoration: none;
+    color: #716360;
+}
+
+
+.headerRightMenuItem_login {
+    grid-column-start: 2;
+    justify-self: end;
+}
+
+.headerLeftMenuItem,
+.headerRightMenuItem,
+ .user-menu-item {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    font-variant: small-caps;
+    color: #716360;
+    text-transform: lowercase;
+}
+
+.user-menu-item {
+    text-align: center;
+}
+
+
+
+.headerLeftMenu__link,
+.headerRightMenu__link,
+ .user-menu-link {
+    text-decoration: none;
+    color: #716360;
+}
+
+.headerLeftMenu__link:hover,
+.headerRightMenu__link:hover {
+    text-decoration: none;
+    color: #716360;
+}
+
+.user-menu-link:hover {
+    color: #716360;
+}
+
+.bottomRow {
+    grid-row-start: 3;
+}
+
+.headerRightMenuItem_search {
+    display: flex;
+}
+
+.headerRightMenu__img {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 3px;
+    cursor: pointer;
+}
+
+.fa-long-arrow-right, .fa-long-arrow-left {
+    position: absolute;
+    top: 38%;
+    background: #fff;
+    color: #675757;
+    border-radius: 50%;
+    border: 2px solid #675757;
+    padding: 20px;
+}
+
+.fa-long-arrow-right {
+    left: 10%;
+}
+
+.fa-long-arrow-left {
+    right: 10%;
+}
+
+.catalog {
+    background: #ccc;
+    min-height: 300px;
+    padding-bottom: 50px;
+}
+
+.containerUp {
+    min-height: 0;
+}
+
+.catalogTitle, .hotTitle {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 32px;
+    padding-top: 32px;
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0;
+}
+
+.catalogMenu {
+    background: #675757;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.catalogMenu .container {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.mainProducts {
+    min-height: 800px;
+    position: relative;
+}
+
+.catalogMenu__item {
+    font-family: 'arBonnie', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8vh;
+    line-height: 73px;
+    color: #fff;
+}
+
+.catalogMenu__link, .catalogMenu__link:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.catalogFiltersTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    color: #000000;
+    margin-bottom: 37px;
+}
+
+.catalogFilters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.catalogFilters__item {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 322px;
+    height: 80px;
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    color: #000000;
+    background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        radial-gradient(#ddd 70%, transparent 72%);
+    background-position:
+        calc(100% - 30px) calc(1em + 4px),
+        calc(100% - 25px) calc(1em + 4px),
+        calc(100% - .5em) .5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1.5em 1.5em;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 8px;
+}
+
+.catalogFilters__item:focus {
+    outline: none;
+    background-image:
+        linear-gradient(45deg, white 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, white 50%),
+        radial-gradient(gray 70%, transparent 72%);
+    background-position:
+        calc(100% - 25px) 1em,
+        calc(100% - 30px) 1em,
+        calc(100% - .5em) .5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1.5em 1.5em;
+    background-repeat: no-repeat;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productsItem {
+    margin-left: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.productsItem__img {
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.productItemInfo {
+    background: #d2d7dc;
+    position: absolute;
+    top: 81%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 38.86px;
+}
+
+.productItemInfo__name {
+    font-family: 'arBonnie', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 61.4654px;
+    line-height: 73px;
+    margin: 0;
+    color: #FFFFFF;
+    position: relative;
+    top: -15px;
+    left: 10px;
+}
+
+.productItemInfo__link, .productItemInfo__link:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.linkPrice, .linkPrice:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.productItemInfo__price {
+    font-family: 'Cormorant Unicase', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22.0822px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-top: 5px;
+    padding-right: 10px;
+}
+
+.catalogMoreInfo {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.catalogMoreInfo__link {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+}
+
+.catalogMoreInfo__link:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.catalogMoreInfoLine {
+    height: 2px;
+    background: #000;
+    width: 20%;
+    margin-top: 20px;
+    display: block;
+    margin: 18px auto;
+}
+
+.catalogMoreInfoLine_length {
+    width: 12%;
+}
+
+.footer {
+    background: #e2e2e2;
+    min-height: 256px;
+}
+
+.footerInner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+}
+
+.contacts {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+    color: #000000;
+}
+
+.contacts__item {
+    margin-top: 0;
+    max-width: 270px;
+}
+
+.footerMenu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 102px;
+    grid-row-gap: 36px;
+    padding-left: 0;
+}
+
+.footerMenu__item {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    font-variant: small-caps;
+    list-style: none;
+
+}
+
+.footerMenu__link {
+    color: #373130;
+    text-decoration-line: underline;
+}
+
+.footerSocials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footerSocials__item {
+    cursor: pointer;
+}
+
+.carousel {
+    width: 40%;
+    margin: auto;
+    height: 350px;
+    margin-top: 30px;
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+    position: relative;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel-item:first-child {
+    background: url(../img/sale.png) no-repeat;
+    background-size: cover;
+}
+
+ol.carousel-indicators {
+    bottom: -20px;
+    position: absolute;
+    left: 0;
+}
+
+.sale {
+    width: 100%;
+}
+
+.hotProduct {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    background: #e3a074;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding-top: 5%;
+    box-sizing: border-box;
+}
+
+.hotProductInfo h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.hotProductInfo p {
+    margin: 0;
+    padding: 0;
+}
+
+.hotProductImg {
+    height: 90%;
+    border-radius: 50%;
+}
+
+.hotProductInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hotProductInfo__add {
+    font-size: 18.2518px;
+}
+
+.hotProductInfo__name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18.2267px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #fff;
+}
+
+.hotProductInfo__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hotProductInfo__link:hover {
+    color: #dbdbdb;
+    text-decoration: none;
+}
+
+.hotProductInfo__add:hover,
+.hotProductInfo__add:focus {
+    background: #3b3b3b;
+    text-decoration: none;
+    color: #fff;
+}
+
+.basket {
+    font-size: 15px;
+}

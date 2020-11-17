@@ -2,14 +2,12 @@
 {% load static %}
 
 {% block title %}
-    <title>Главная</title>
+<title xmlns="http://www.w3.org/1999/html">{{ title }}</title>
 {% endblock %}
 {% block menu %}
-    <section class="catalog">
-        <div class="container containerUp">
-            <h2 class="catalogTitle">Каталог</h2>
-        </div>
-        {% include 'mainapp/includes/inc_main_menu.html' %}
+ <section class="catalog">
+     {% include 'mainapp/includes/inc_main_menu.html' %}
+     {% include 'mainapp/includes/inc_slider.html' %}
     {% endblock %}
         {% block content %}
             <div class="container mainProducts">
@@ -26,18 +24,20 @@
                     </select>
                 </div>
                 <div class="products">
-                    {% for product in products %}
-                        <div class="productsItem">
-                            <img src="{{ product.image.url }}" class="productsItem__img">
-                            <div class="productItemInfo">
-                                <h4 class="productItemInfo__name"><a href="#" class="productItemInfo__link">{{ product.category }}</a></h4>
-                                <p class="productItemInfo__price">{{ product.price }}rub</p>
+                    {% for product in object_list %}
+                            <div class="productsItem">
+                                <img src="{{ product.image.url }}" class="productsItem__img">
+                                <div class="productItemInfo">
+                                    <h4 class="productItemInfo__name"><a href="{% url 'product' product.pk %}"
+                                                                         class="productItemInfo__link">{{ product.category }}</a></h4>
+                                    <p class="productItemInfo__price productItemInfo__link linkPrice">{{ product.price }}rub</p>
+                                </div>
                             </div>
-                        </div>
                     {% endfor %}
                 </div>
                 <div class="catalogMoreInfo">
-                    <span class="catalogMoreInfo__link">ЗАГРУЗИТЬ ЕЩЕ</span>
+                    <span class="catalogMoreInfo__text"><a href="{% url 'main:catalog' %}" class="catalogMoreInfo__link">
+                        ЗАГРУЗИТЬ ЕЩЕ</a></span>
                     <div class="catalogMoreInfoLine"></div>
                     <div class="catalogMoreInfoLine catalogMoreInfoLine_length"></div>
                 </div>
