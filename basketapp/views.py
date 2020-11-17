@@ -5,7 +5,9 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.template.loader import render_to_string
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views.generic import ListView, CreateView
 
 from basketapp.models import Basket
 from mainapp.models import Product
@@ -21,7 +23,7 @@ def basket(request):
 
 
 @login_required
-def add(request, pk):
+def BasketAdd(request, pk):
     if 'login' in request.META.get('HTTP_REFERER'):
         return HttpResponseRedirect(reverse('product', args=[pk]))
     product = get_object_or_404(Product, pk=pk)
@@ -70,5 +72,4 @@ def basket_edit_minus(request, pk):
 
         content = {'basket_items': basket_items}
         result = render_to_string('basketapp/includes/inc_basket_list.html', content)
-        print(content)
         return JsonResponse({'result': result})

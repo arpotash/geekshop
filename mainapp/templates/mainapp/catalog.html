@@ -27,7 +27,7 @@
                     </select>
                 </div>
                 <div class="products">
-                    {% for product in catalog %}
+                    {% for product in object_list %}
                         <div class="productsItem">
                             <img src="{{ product.image.url }}" class="productsItem__img">
                             <div class="productItemInfo">

@@ -1,7 +1,9 @@
+import urllib
 from collections import OrderedDict
 from datetime import datetime
 from geekshop import settings
 from urllib.parse import urlunparse, urlencode
+import urllib.request
 
 import requests
 from django.utils import timezone
@@ -40,4 +42,8 @@ def save_user_profile(backend, user, response, *args, **kwargs):
                 user.delete()
                 raise AuthForbidden('social_core.backends.vk.VKOAuth2')
             user.age = age
+
+        if data['photo_200']:
+            urllib.request.urlretrieve(data['photo_200'], f'{settings.MEDIA_ROOT}/users_avatar{user.pk}.jpg')
+            user.avatar = f'users_avatar{user.pk}.jpg'
         user.save()

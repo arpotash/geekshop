@@ -3,6 +3,7 @@ from random import randint
 
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, TemplateView
 
 from basketapp.models import Basket
 from geekshop import settings
@@ -26,50 +27,57 @@ def hot_products():
     return hot_list
 
 
-def main(request, pk=None, page=1):
-    title = 'главная'
-    if pk is None:
-        products = Product.objects.filter(is_active=True)[:9]
-        category = ''
-    else:
-        category = get_object_or_404(CategoryProduct, pk=pk)
-        products = Product.objects.filter(category=category, is_active=True)
-    paginator = Paginator(products, 2)
-    try:
-        products_paginator = paginator.page(page)
-    except PageNotAnInteger:
-        products_paginator = paginator.page(1)
-    except EmptyPage:
-        products_paginator = paginator.page(paginator.num_pages)
-    hot_product = hot_products()
+class ProductsList(ListView):
+    model = Product
+    template_name = 'mainapp/index.html'
 
-    content = {
-        'title': title,
-        'products': products_paginator,
-        'category': category,
-        'links': links,
-        'hot_product': hot_product,
-    }
-    return render(request, 'mainapp/index.html', content)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'главная'
+        context['hot_products'] = hot_products()
+        context['links'] = links
+        return context
 
 
-def catalog(request):
-    title = 'каталог'
-    _catalog = Product.objects.filter(is_active=True)
-    content = {'title': title, 'catalog': _catalog, 'links': links}
-    return render(request, 'mainapp/catalog.html', content)
+class ProductsInCategory(ListView):
+    model = Product
+    template_name = 'mainapp/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['hot_products'] = hot_products()
+        context['links'] = links
+        context['category'] = self.kwargs
+        return context
+
+    def get_queryset(self):
+        return Product.objects.filter(category_id=self.kwargs['pk'])
 
 
-def product(request, pk=None):
-    _product = get_object_or_404(Product, pk=pk)
-    content = {
-        'links': links,
-        'product': _product,
-    }
-    return render(request, 'mainapp/product.html', content)
+class Catalog(ListView):
+    model = Product
+    template_name = 'mainapp/catalog.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'каталог'
+        context['links'] = links
+        return context
+
+    def get_queryset(self):
+        return Product.objects.filter(is_active=True)
 
 
-def about(request):
-    content = {
-    }
-    return render(request, 'mainapp/aboutUs.html', content)
+class ProductObject(ListView):
+    model = Product
+    template_name = 'mainapp/product.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['links'] = links
+        context['product'] = get_object_or_404(Product, pk=self.kwargs['pk'])
+        return context
+
+
+class About(TemplateView):
+    template_name = 'mainapp/aboutUs.html'

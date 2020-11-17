@@ -39,8 +39,25 @@
                     <ul class="headerRightMenu">
                         {% if user.is_authenticated %}
                             <li class="headerRightMenuItem">
-                                <a href="{% url 'auth:edit' %}" class="headerRightMenu__link">
-                                    {{ user.username|default:'Пользователь' }}</a></li>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle headerRightMenu__link" href="" data-toggle="dropdown">
+                                       {{ user.first_name|default:'Пользователь' }}
+                                       <span class="caret"></span>
+                                   </a>
+                                    <ul class="dropdown-menu">
+                                       <li class="user-menu-item">
+                                           <a href="{% url 'auth:edit' %}" class="user-menu-link">
+                                               профиль
+                                           </a>
+                                       </li>
+                                       <li class="user-menu-item">
+                                           <a href="{% url 'order:order_list' %}" class="user-menu-link">
+                                               заказы
+                                           </a>
+                                       </li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li class="headerRightMenuItem">
                                 <a href="{% url 'auth:logout' %}" class="headerRightMenu__link">выход</a></li>
                         {% else %}

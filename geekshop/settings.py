@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'basketapp',
     'adminapp',
     'social_django',
+    'orderapp',
 ]
 
 MIDDLEWARE = [
@@ -177,6 +178,3 @@ SOCIAL_AUTH_GITHUB_KEY = '4d76acc32a82e53bfe3e'
 SOCIAL_AUTH_GITHUB_SECRET = '9e43e697f1cd9a8875519e2254e5d078cf514316'
 SOCIAL_AUTH_GITHUB_SCOPE = ['user:email']
 
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78a436x3vojy04'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'hdxqooZubeMVHYmN'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_basicprofile', 'r_emailaddress']

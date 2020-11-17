@@ -3,6 +3,7 @@
 @import url(about.css);
 @import url(authentication.css);
 @import url(basket.css);
+@import url(order.css);
 
 body {
     padding: 0;
@@ -107,7 +108,8 @@ body {
 }
 
 .headerLeftMenuItem,
-.headerRightMenuItem {
+.headerRightMenuItem,
+ .user-menu-item {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -119,8 +121,15 @@ body {
     text-transform: lowercase;
 }
 
+.user-menu-item {
+    text-align: center;
+}
+
+
+
 .headerLeftMenu__link,
-.headerRightMenu__link {
+.headerRightMenu__link,
+ .user-menu-link {
     text-decoration: none;
     color: #716360;
 }
@@ -128,6 +137,10 @@ body {
 .headerLeftMenu__link:hover,
 .headerRightMenu__link:hover {
     text-decoration: none;
+    color: #716360;
+}
+
+.user-menu-link:hover {
     color: #716360;
 }
 

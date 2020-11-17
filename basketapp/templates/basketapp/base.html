@@ -35,7 +35,7 @@
                         {% if user.is_authenticated %}
                             <li class="headerRightMenuItem">
                                 <a href="{% url 'auth:edit' %}" class="headerRightMenu__link">
-                                    {{ user.username|default:'Пользователь' }}</a></li>
+                                    {{ user.first_name|default:'Пользователь' }}</a></li>
                             <li class="headerRightMenuItem">
                                 <a href="{% url 'auth:logout' %}" class="headerRightMenu__link">выход</a></li>
                         {% else %}
